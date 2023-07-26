@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>array</title>
+    <script type="text/javascript">
+        var arr1 = [];
+        var arr2 = [];
+        
+        function showdata(){
+            var string;
+            
+            string = ("<h1>This is table 1</h1>");
+            string +=("<table border '1'>") ;
+            for(let i= 0; i<arr1.length; i++){
+                string +=("<tr><td>" + arr1[i]+"</tr></td>" );
+                
+            }
+            string +=("</table>") ;
+        
+             string = ("<h1>This is table 2</h1>");
+            string +=("<table border '1'>") ;
+            for(let i= 0; i<arr2.length; i++){
+                string +=("<tr><td>" + arr2[i]+"</tr></td>" );
+                
+            }
+            string +=("</table>") ;
+            
+            string = ("<h1>This is combine table 2</h1>");
+            string +=("<table border '1'>") ;
+            for(let i= 0; i<arr1.length; i++){
+                string +=("<tr><td>" + arr1[i]+"</td><td>" +arr2[1] +"</td></tr>" );
+                
+            }
+            string +=("</table>") ;
+            
+            document.getElementById("show").innerHTML = string;
+        }
+        
+        function insertdata(){
+            var data1 = document.form1.input1.value;
+            var data2 = Document.form1.input2.value;
+            
+            arr1.push(data1);
+            arr2.push(data2);
+            
+            Document.form1.input2.value = "";
+            Document.form1.input2.value = "";
+        }
+   
+   
+   </script>
+</head>
+<body>
+    <form name="form1">
+        <input type="text" name="input1" />
+        <br />
+        <br />
+        <input type="text" name="input2" />
+        <br />
+        <br />
+        <input type="button" value="insert data" onclick="insertdata()" />
+        <input type="button" value="show data" onclick="showdata()" />
+        <br />
+        <br />
+        
+    <p id="show"></p>
+    </form>
+        
+
+
+   
+    
+</body>
+</html>
